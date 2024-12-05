@@ -3,11 +3,12 @@ import NewProject from "./components/NewProject";
 import NoProjectSelected from "./components/NoProjectSelected";
 import ProjectsSidebar from "./components/ProjectsSideBar";
 import SelectedProject from "./components/SelectedProject";
-
+import './App.css'
+import Background from "./components/Background";
 function App() {
   const [projectState, setProjectState] = useState({
     // aur idhr pr bhi
-    selectedProject: undefined, // Idahr pr mere project me alag hai
+    selectedProject: undefined, // Idahr pr
     projects: [],
     tasks: []
   });
@@ -108,7 +109,11 @@ function App() {
   }
 
   return (
-    <main className="h-screen my-8 flex gap-8">
+
+    <div style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
+    <Background />
+    <div style={{ position: "absolute", top: 0, left: 0, zIndex: 1 }}>
+      <main className="h-screen my-8 flex gap-8">
       <ProjectsSidebar
         onStartAddProject={handleStartAddProject}
         projects={projectState.projects}
@@ -117,6 +122,10 @@ function App() {
       />
       {content}
     </main>
+    </div>
+  </div>
+   
+  
   );
 }
 
