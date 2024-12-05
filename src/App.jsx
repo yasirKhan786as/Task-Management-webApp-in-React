@@ -3,7 +3,7 @@ import NewProject from "./components/NewProject";
 import NoProjectSelected from "./components/NoProjectSelected";
 import ProjectsSidebar from "./components/ProjectsSideBar";
 import SelectedProject from "./components/SelectedProject";
-
+import './App.css'
 function App() {
   const [projectState, setProjectState] = useState({
     // aur idhr pr bhi
@@ -108,6 +108,7 @@ function App() {
   }
 
   return (
+   
     <main className="h-screen my-8 flex gap-8">
       <ProjectsSidebar
         onStartAddProject={handleStartAddProject}
